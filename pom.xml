@@ -14,10 +14,11 @@
     <module>acme-pay-account-service</module>
     <module>acme-pay-customer-service</module>
     <module>acme-pay-transaction-service</module>
-      <module>acme-pay-notification-service</module>
+    <module>acme-pay-notification-service</module>
   </modules>
 
   <properties>
+    <flyway.version>9.16.3</flyway.version>
     <spring.boot.version>3.2.4</spring.boot.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
@@ -31,6 +32,14 @@
       <artifactId>lombok</artifactId>
       <version>1.18.32</version>
       <scope>provided</scope>
+    </dependency>
+
+    <!-- flyway -->
+
+    <dependency>
+      <groupId>org.flywaydb</groupId>
+      <artifactId>flyway-core</artifactId>
+      <version>${flyway.version}</version>
     </dependency>
 
     <dependency>
