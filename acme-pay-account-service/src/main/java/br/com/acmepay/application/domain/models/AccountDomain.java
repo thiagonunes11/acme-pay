@@ -6,12 +6,9 @@ import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
-@Getter
-@Setter
-@Builder
+
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class AccountDomain {

@@ -19,6 +19,7 @@
   </modules>
 
   <properties>
+    <flyway.version>9.16.3</flyway.version>
     <spring.boot.version>3.2.4</spring.boot.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
@@ -32,6 +33,13 @@
       <version>1.18.32</version>
       <scope>provided</scope>
     </dependency>
+
+    <dependency>
+      <groupId>org.flywaydb</groupId>
+      <artifactId>flyway-core</artifactId>
+      <version>${flyway.version}</version>
+    </dependency>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
