@@ -7,8 +7,12 @@
   <groupId>br.com.acmepay</groupId>
   <artifactId>acme-pay</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
 
   <name>acme-pay</name>
+  <modules>
+    <module>acme-pay-account-service</module>
+  </modules>
 
   <properties>
     <spring.boot.version>3.2.4</spring.boot.version>
@@ -18,6 +22,14 @@
   </properties>
 
   <dependencies>
+    <!-- lombok -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.32</version>
+      <scope>provided</scope>
+    </dependency>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
