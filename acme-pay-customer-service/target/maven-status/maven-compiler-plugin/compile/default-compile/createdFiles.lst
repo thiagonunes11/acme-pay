@@ -1,0 +1,4 @@
+br/com/acmepay/application/domain/models/CustomerDomain.class
+br/com/acmepay/application/domain/exception/customerCreatedDuplicated.class
+br/com/acmepay/application/domain/models/CustomerDomain$CustomerDomainBuilder.class
+br/com/acmepay/Main.class
