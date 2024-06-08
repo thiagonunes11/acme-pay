@@ -1,4 +1,4 @@
-package br.com.acmepay.adapters.input.api.request;
+package br.com.acmepay.adapters.input.api;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,4 +17,5 @@ public class AccountRequest {
     private Integer number;
     private Integer agency;
     private BigDecimal balance;
+    private String document;
 }

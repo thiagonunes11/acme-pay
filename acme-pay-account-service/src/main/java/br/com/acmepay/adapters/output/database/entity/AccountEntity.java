@@ -1,4 +1,4 @@
-package br.com.acmepay.adapters.output.entity;
+package br.com.acmepay.adapters.output.database.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -31,4 +31,5 @@ public class AccountEntity {
     private Boolean close;
     private LocalDateTime created_at;
     private LocalDateTime updated_at;
+    private String document;
 }

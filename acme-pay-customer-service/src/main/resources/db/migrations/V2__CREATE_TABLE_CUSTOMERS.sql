@@ -1,0 +1,29 @@
+create table if not exists customer
+(
+    id
+    serial
+    PRIMARY
+    KEY,
+    name
+    varchar
+    not
+    null,
+    phone
+    varchar
+    not
+    null,
+    email
+    varchar
+    not
+    null,
+    document
+    varchar
+    not
+    null,
+    created_at
+    TIMESTAMP
+    not
+    null,
+    updated_at
+    TIMESTAMP
+);
