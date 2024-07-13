@@ -1,6 +1,7 @@
 package br.com.acmepay.application.domain.models;
 
 import br.com.acmepay.application.domain.exception.customerCreatedDuplicated;
+import br.com.acmepay.application.ports.out.ICreateCustomer;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -25,21 +26,8 @@ public class CustomerDomain {
 
     private List<CustomerDomain> customers = new ArrayList<>();
 
-    public CustomerDomain create(CustomerDomain customer) throws customerCreatedDuplicated {
-        if (validCustomerCreated(customer)) {
-            throw new customerCreatedDuplicated("Already registered customer");
-        }
-        if (validDocumentCustomer(customer.document)) {
-            this.setId(1L);
-            this.setName(customer.name);
-            this.setEmail(customer.email);
-            this.setPhone(customer.phone);
-            this.setDocument(customer.document);
-            this.setCreated_at(LocalDateTime.now());
-            this.setUpdated_at(null);
-            this.customers.add(customer);
-        }
-        return this;
+    public void create(ICreateCustomer createCustomer) {
+        createCustomer.execute(this);
     }
 
     public List<CustomerDomain> listCustomer()  {

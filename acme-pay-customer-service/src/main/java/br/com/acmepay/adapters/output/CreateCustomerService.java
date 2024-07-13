@@ -16,13 +16,6 @@ public class CreateCustomerService implements ICreateCustomer {
 
     @Override
     public void execute(CustomerDomain customerDomain) {
-        var entity = CustomerEntity.builder()
-                .name(CustomerDomain.getName())
-                .email(CustomerDomain.getEmail())
-                .document(CustomerDomain.getDocument())
-                .created_at(CustomerDomain.getCreated_at())
-                .updated_at(CustomerDomain.getUpdated_at())
-                .build();
-        repository.save(entity);
+
     }
 }

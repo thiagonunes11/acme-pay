@@ -44,7 +44,7 @@ public class AccountDomain {
         if (this.balance.compareTo(amount) >= 0){
             this.balance.subtract(amount);
         }else {
-            throw new BalanceToWithdrawException("error withdraw");
+            throw new BalanceToWithdrawException("withdraw error");
         }
     }
 }
