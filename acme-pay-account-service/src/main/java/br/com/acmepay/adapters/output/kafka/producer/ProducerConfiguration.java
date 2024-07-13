@@ -1,4 +1,4 @@
-package br.com.acmepay.adapters.output.queue.producer.config;
+package br.com.acmepay.adapters.output.kafka.producer;
 
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
@@ -16,23 +16,17 @@ import java.util.Map;
 public class ProducerConfiguration {
 
     @Bean
-    public ProducerFactory<String, Object> producerFactory(){
-        Map<String, Object> configs = new HashMap<>();
-
-        //MUDAR A PORTA DE ACORDO COM O USO
-        configs.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
-
-
-        configs.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
-        configs.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
-
-        return new DefaultKafkaProducerFactory<>(configs);
+    public ProducerFactory<String,Object> producerFactory(){
+        Map<String,Object> config = new HashMap<>();
+        config.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+        config.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+        config.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
+        return new DefaultKafkaProducerFactory<>(config);
     }
-
 
     @Bean
     public KafkaTemplate<String, Object> kafkaTemplate(){
-      return new KafkaTemplate<>(producerFactory());
+        return new KafkaTemplate<>(producerFactory());
     }
 
 }
