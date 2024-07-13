@@ -3,8 +3,8 @@ package br.com.acmepay.adapters.input.controller;
 import br.com.acmepay.adapters.input.api.IAccountResourceAPI;
 import br.com.acmepay.adapters.input.api.AccountRequest;
 import br.com.acmepay.adapters.input.api.response.AccountResponse;
+import br.com.acmepay.adapters.output.kafka.producer.MessageProducer;
 import br.com.acmepay.adapters.output.queue.ISendMessage;
-import br.com.acmepay.adapters.output.queue.service.MessageProducer;
 import br.com.acmepay.application.domain.models.AccountDomain;
 import br.com.acmepay.application.ports.in.ICreateAccountUseCase;
 import lombok.AllArgsConstructor;
@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 public class AccountController implements IAccountResourceAPI {
 
     private final ICreateAccountUseCase createAccountUseCase;
-    private final ISendMessage sendMessage;
+    private final MessageProducer sendMessage;
 
     @Override
     public AccountResponse create(AccountRequest request) {
@@ -31,7 +31,7 @@ public class AccountController implements IAccountResourceAPI {
                 .customerDocument(request.getDocument())
                 .build();
         createAccountUseCase.execute(domain);
-        sendMessage.execute("topic-1", domain);
+        sendMessage.sendMessage("Account", domain);
         return AccountResponse.builder()
                 .message("account created!")
                 .build();
