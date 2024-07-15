@@ -2,10 +2,9 @@ package br.com.acmepay.adapters.input.api;
 
 import br.com.acmepay.adapters.input.api.response.CustomerResponse;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.*;
+
+import java.math.BigDecimal;
 
 @RequestMapping("/api/v1/customers")
 public interface ICustomerResourceAPI {
@@ -13,4 +12,10 @@ public interface ICustomerResourceAPI {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     CustomerResponse create(@RequestBody CustomerRequest request);
+
+
+    @GetMapping("/salary")
+    @ResponseStatus(HttpStatus.OK)
+    BigDecimal getSalary(@RequestBody GetSalaryRequest document);
+
 }

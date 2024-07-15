@@ -1,4 +1,4 @@
-create table if not exists customer
+create table if not exists customers
 (
     id
     serial

@@ -1,0 +1,2 @@
+ALTER TABLE customers
+ADD COLUMN salary DECIMAL(10,3) NOT NULL ;

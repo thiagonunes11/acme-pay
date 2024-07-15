@@ -24,6 +24,7 @@ public class AccountDomain {
     private LocalDateTime created_at;
     private LocalDateTime updated_at;
     private String customerDocument;
+    private String card;
 
     public void create(ICreateAccount createAccount, ICheckDocumentCustomer checkDocumentCustomer) {
 
@@ -46,5 +47,11 @@ public class AccountDomain {
         }else {
             throw new BalanceToWithdrawException("withdraw error");
         }
+    }
+
+    public BigDecimal createCard(String customerDocument){
+        var m1 = BigDecimal.valueOf(0.1);
+        var m2 = BigDecimal.valueOf(0.3);
+        var m3 = BigDecimal.valueOf(0.5);
     }
 }

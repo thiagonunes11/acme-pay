@@ -31,4 +31,5 @@ public class CustomerEntity {
     private String phone;
     private LocalDateTime created_at;
     private LocalDateTime updated_at;
+    private BigDecimal salary;
 }
