@@ -53,5 +53,9 @@ public class AccountDomain {
         var m1 = BigDecimal.valueOf(0.1);
         var m2 = BigDecimal.valueOf(0.3);
         var m3 = BigDecimal.valueOf(0.5);
+        var limit = BigDecimal.ZERO;
+
+
+
     }
 }
